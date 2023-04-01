@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header {
+  background-image: linear-gradient(rgb(58, 57, 57), LightGray);
+}
+
+.site-footer {
+  background-image: linear-gradient(LightGray, rgb(58, 57, 57));
+}
+
+.site-footer a {
+  color: white;
+}
