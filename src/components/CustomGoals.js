@@ -1,23 +1,24 @@
 import { Button, Label, Col, FormGroup } from "reactstrap";
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import DatePicker from 'react-datepicker';
-import { useState } from 'react';
+import { useState } from "react";
 // import { validateContactForm } from "../utils/validateContactForm";
 
-import "react-datepicker/dist/react-datepicker.css";
-
-const DailyStatForm = ({ handleStatsCancel }) => {
-    const [date, setDate] = useState(new Date());
+const CustomGoals = ({ handleApptChange, handlePresentationChange, handleDoorKnockChange, handleHourChange, handleGoalsCancel }) => {
+    const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = (values, { resetForm }) => {
+        handleApptChange(values.appointments);
+        handlePresentationChange(values.presentations);
+        handleDoorKnockChange(values.doorKnocks);
+        handleHourChange(values.hours);
+        handleGoalsCancel();
         console.log('form values:', values);
         console.log('in JSON format:', JSON.stringify(values));
-        handleStatsCancel();
         resetForm();
-    }
-
-    const handleDateChange = (date) => {
-        setDate(date);
+        setSubmitted(true);
+        setTimeout(() => {
+            setSubmitted(false);
+        }, 10000); // show for 10 seconds
     };
 
     const getOptions = (numOptions) => {
@@ -28,37 +29,23 @@ const DailyStatForm = ({ handleStatsCancel }) => {
 
     return (
         <>
-        <h1>Daily Stats</h1>
+        <h1>Custom Goals</h1>
+        {submitted ? (
+            <div className="alert alert-success mt-3" role="alert">
+                Your custom goals have been updated!
+            </div>
+        ) : (
             <Formik
                 initialValues={{
                     appointments: '',
                     presentations: '',
                     doorKnocks: '',
                     hours: '',
-                    date
                 }}
                 onSubmit={handleSubmit}
                 // validate={validateContactForm}
             >
-                <Form onSubmit={handleSubmit}>
-                    <FormGroup row>
-                        <Label htmlFor="date" md='2'>
-                            Date
-                        </Label>
-                        <Col md='10'>
-                            <DatePicker 
-                                selected={date}
-                                onChange={handleDateChange}
-                                dateFormat="MM/dd/yyyy"
-                                className="form-control"
-                                id="date"
-                                name="date"
-                            />
-                            <ErrorMessage name='date'>
-                                {(msg) => <p className="text-danger">{msg}</p>}
-                            </ErrorMessage>
-                        </Col>
-                    </FormGroup>
+                <Form>
                     <FormGroup row>
                         <Label htmlFor="appointments" md='2'>
                             Appointments
@@ -71,7 +58,7 @@ const DailyStatForm = ({ handleStatsCancel }) => {
                                 placeholder='Appointments'
                             >
                                 <option value={''}>Select an Option</option>
-                                {getOptions(15)}
+                                {getOptions(30)}
                             </Field>
                             <ErrorMessage name='appointments'>
                                 {(msg) => <p className="text-danger">{msg}</p>}
@@ -90,7 +77,7 @@ const DailyStatForm = ({ handleStatsCancel }) => {
                                 placeholder='Presentations'
                             >
                                 <option value={''}>Select an Option</option>
-                                {getOptions(10)}
+                                {getOptions(20)}
                             </Field>
                             <ErrorMessage name='presentations'>
                                 {(msg) => <p className="text-danger">{msg}</p>}
@@ -109,7 +96,7 @@ const DailyStatForm = ({ handleStatsCancel }) => {
                                 placeholder='Door Knocks'
                             >
                                 <option value={''}>Select an Option</option>
-                                {getOptions(20)}
+                                {getOptions(40)}
                             </Field>
                             <ErrorMessage name='doorKnocks'>
                                 {(msg) => <p className="text-danger">{msg}</p>}
@@ -128,7 +115,7 @@ const DailyStatForm = ({ handleStatsCancel }) => {
                                 placeholder='Hours'
                             >
                                 <option value={''}>Select an Option</option>
-                                {getOptions(14)}
+                                {getOptions(60)}
                             </Field>
                             <ErrorMessage name='hours'>
                                 {(msg) => <p className="text-danger">{msg}</p>}
@@ -137,18 +124,22 @@ const DailyStatForm = ({ handleStatsCancel }) => {
                     </FormGroup>
                     <FormGroup row>
                         <Col md={{ size: 10, offset: 2}} className='mb-3'>
-                            <Button type="submit" color="primary" style={{ marginRight: '10px' }}>
-                                Submit
-                            </Button>
-                            <Button type="button" color="danger" onClick={handleStatsCancel} style={{ marginLeft: '10px' }}>
-                                Cancel
-                            </Button>
+                                <Button type="submit" color="primary" style={{ marginRight: '10px' }}>
+                                    Submit
+                                </Button>
+                                <Button type='button' color='danger' onClick={handleGoalsCancel} style={{ marginRight: '10px', marginLeft: '10px' }}>
+                                    Cancel
+                                </Button>
+                                <Button type="reset" color="secondary" style={{ marginLeft: '10px' }}>
+                                    Reset
+                                </Button>
                         </Col>
                     </FormGroup>
                 </Form>
             </Formik>
+            )}
         </>
     );
 };
 
-export default DailyStatForm;
+export default CustomGoals;
