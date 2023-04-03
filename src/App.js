@@ -19,8 +19,6 @@ function App() {
         <Route path='/contact' element={ <ContactPage /> } />
         <Route path='/tracker' element={ <TrackerPage /> } />
         <Route path='/stats' element={ <StatsPage /> } />
-        <Route path='/quoter' element={ <HomePage /> } />
-        <Route path='/contact' element={ <HomePage /> } />
       </Routes>
       <Footer />
     </div>

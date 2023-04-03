@@ -37,3 +37,9 @@
     transform: translateY(0px);
   }
 }
+
+.company-image {
+  width: 80%; /* set a fixed width for all images */
+  height: auto; /* preserve aspect ratio */
+  object-fit: cover; /* scale image to cover entire container */
+}

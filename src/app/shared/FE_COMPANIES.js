@@ -27,6 +27,7 @@ export const FE_COMPANIES = [
         zipcode: '37064',
         phone: '866-272-6630',
         fax: '',
+        url: 'https://www.aetnacvshealth.com/index-tx.html?adobe_mc_sdid=SDID%3D018CA6E2E76F31F6-4516F8B9FF5D2112%7CMCORGID%3D993B1C8B532962CD0A490D4D%40AdobeOrg%7CTS%3D1680401195&adobe_mc_ref=https%3A%2F%2Fwww.aetnacvshealth.com%2Findex-tx.html'
     },
     {
         id: 1,
@@ -38,6 +39,7 @@ export const FE_COMPANIES = [
         zipcode: '76702',
         phone: '800-736-7311',
         fax: '254-297-2105',
+        url: 'https://www.americanamicable.com/v3/'
     },
     {
         id: 2,
@@ -49,6 +51,7 @@ export const FE_COMPANIES = [
         zipcode: '64141',
         phone: '800-231-0801',
         fax: '800-395-9238',
+        url: 'https://www.americo.com/'
     },
     {
         id: 3,
@@ -60,6 +63,7 @@ export const FE_COMPANIES = [
         zipcode: '85004',
         phone: '888-863-6674',
         fax: '833-316-0357',
+        url: 'https://christianfidelity.com/'
     },
     {
         id: 4,
@@ -71,6 +75,7 @@ export const FE_COMPANIES = [
         zipcode: '',
         phone: '800-423-9765',
         fax: '',
+        url: 'https://www.cfglife.com/'
     },
     {
         id: 5,
@@ -82,6 +87,7 @@ export const FE_COMPANIES = [
         zipcode: '14201',
         phone: '800-828-1540',
         fax: '',
+        url: 'https://www.foresters.com/en#gref'
     },
     {
         id: 6,
@@ -93,6 +99,7 @@ export const FE_COMPANIES = [
         zipcode: '49412',
         phone: '800-704-2180',
         fax: '231-928-3078',
+        url: 'https://www.gerberlife.com/'
     },
     {
         id: 7,
@@ -104,6 +111,7 @@ export const FE_COMPANIES = [
         zipcode: '50306',
         phone: '800-733-5454',
         fax: '801-689-1394',
+        url: 'https://www.gwic.com/'
     },
     {
         id: 8,
@@ -115,6 +123,7 @@ export const FE_COMPANIES = [
         zipcode: '60025',
         phone: '800-323-6907',
         fax: '847-298-1215',
+        url: 'https://www.gtlic.com/'
     },
     {
         id: 9,
@@ -126,6 +135,7 @@ export const FE_COMPANIES = [
         zipcode: '76804',
         phone: '800-972-6615',
         fax: '866-505-9377',
+        url: 'https://lbig.com/'
     },
     {
         id: 10,
@@ -137,6 +147,7 @@ export const FE_COMPANIES = [
         zipcode: '73118',
         phone: '800-851-5041',
         fax: '',
+        url: 'https://lifeshieldnational.com/'
     },
     {
         id: 11,
@@ -148,6 +159,7 @@ export const FE_COMPANIES = [
         zipcode: '68175',
         phone: '800-775-6000',
         fax: '',
+        url: 'https://www.mutualofomaha.com/'
     },
     {
         id: 12,
@@ -159,6 +171,7 @@ export const FE_COMPANIES = [
         zipcode: '85004',
         phone: '866-641-9999',
         fax: '877-584-2777',
+        url: 'https://oxfordlife.com/'
     },
     {
         id: 13,
@@ -170,6 +183,7 @@ export const FE_COMPANIES = [
         zipcode: '10001',
         phone: '877-725-4872',
         fax: '',
+        url: 'https://www.prosperitylife.com/'
     },
     {
         id: 14,
@@ -181,6 +195,7 @@ export const FE_COMPANIES = [
         zipcode: '61201',
         phone: '800-627-4762',
         fax: '',
+        url: 'https://www.royalneighbors.org/'
     },
     {
         id: 15,
@@ -192,6 +207,7 @@ export const FE_COMPANIES = [
         zipcode: '52406',
         phone: '800-797-2643',
         fax: '972-881-4527',
+        url: 'https://www.transamerica.com/'
     },
     {
         id: 16,
@@ -203,5 +219,6 @@ export const FE_COMPANIES = [
         zipcode: '74133',
         phone: '918-249-2438',
         fax: '',
+        url: 'https://trinitylifeinsurance.com/'
     },
 ]
