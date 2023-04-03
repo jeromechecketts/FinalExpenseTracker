@@ -12,6 +12,10 @@ const TrackerPage = () => {
     const [hours, setHours] = useState(33);
     const [showDailyStats, setShowDailyStats] = useState(false);
     const [showCustomGoals, setShowCustomGoals] = useState(false);
+    const [apptProgress, setApptProgress] = useState(0);
+    const [presentationProgress, setPresentationProgress] = useState(0);
+    const [doorKnockProgress, setDoorKnockProgress] = useState(0);
+    const [hourProgress, setHourProgress] = useState(0);
 
     const DefaultGoals = () => {
         return (
@@ -33,11 +37,23 @@ const TrackerPage = () => {
     const handleHourChange = (newHour) => {
         setHours(newHour);
     };
-    const handleGoalsCancel = () => {
+    const handleGoalsShow = () => {
         setShowCustomGoals(false);
     };
-    const handleStatsCancel = () => {
+    const handleStatsShow = () => {
         setShowDailyStats(false);
+    };
+    const handleApptProgress = (newApptProgress) => {
+        setApptProgress(apptProgress + parseInt(newApptProgress));
+    };
+    const handlePresentationProgress = (newPresentationProgress) => {
+        setPresentationProgress(presentationProgress + parseInt(newPresentationProgress));
+    };
+    const handleDoorKnockProgress = (newDoorKnockProgress) => {
+        setDoorKnockProgress(doorKnockProgress + parseInt(newDoorKnockProgress));
+    };
+    const handleHourProgress = (newHourProgress) => {
+        setHourProgress(hourProgress + parseInt(newHourProgress));
     };
 
     return (
@@ -67,30 +83,54 @@ const TrackerPage = () => {
                     className="mb-3 mx-2"
                     color='danger'
                     onClick={() => {
-                        {setAppts(12)};
-                        {setPresentations(12)};
-                        {setDoorKnocks(18)};
-                        {setHours(33)};
+                        setAppts(12);
+                        setPresentations(12);
+                        setDoorKnocks(18);
+                        setHours(33);
+                        setShowCustomGoals(false);
                     }}
                 >
                     Reset to Default Goals
                 </Button>
-                {showDailyStats && !showCustomGoals && <DailyStatForm handleStatsCancel={handleStatsCancel}/>}
+                {showDailyStats && !showCustomGoals && 
+                <DailyStatForm 
+                    handleStatsShow={handleStatsShow}
+                    handleApptProgress={handleApptProgress}
+                    handlePresentationProgress={handlePresentationProgress}
+                    handleDoorKnockProgress={handleDoorKnockProgress}
+                    handleHourProgress={handleHourProgress}
+                />}
                 {showCustomGoals && !showDailyStats &&
                 <CustomGoals 
                     handleApptChange={handleApptChange}
                     handlePresentationChange={handlePresentationChange}
                     handleDoorKnockChange={handleDoorKnockChange}
                     handleHourChange={handleHourChange}
-                    handleGoalsCancel={handleGoalsCancel}
+                    handleGoalsShow={handleGoalsShow}
                 />}
                 <DefaultGoals />
                 <div className="mt-4">
-                    <TrackerItem category='Appointments' goal={appts} progress={5} />
+                    <TrackerItem 
+                        category='Appointments' 
+                        goal={appts} 
+                        progress={apptProgress} 
+                    />
                 </div>
-                <TrackerItem category='Presentations' goal={presentations} progress={2} />
-                <TrackerItem category='Door Knocks' goal={doorKnocks} progress={9} />
-                <TrackerItem category='Hours' goal={hours} progress={10} />
+                <TrackerItem 
+                    category='Presentations' 
+                    goal={presentations} 
+                    progress={presentationProgress} 
+                />
+                <TrackerItem 
+                    category='Door Knocks' 
+                    goal={doorKnocks} 
+                    progress={doorKnockProgress} 
+                />
+                <TrackerItem 
+                    category='Hours' 
+                    goal={hours} 
+                    progress={hourProgress} 
+                />
             </Container>
     );
 };

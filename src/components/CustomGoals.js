@@ -3,7 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useState } from "react";
 // import { validateContactForm } from "../utils/validateContactForm";
 
-const CustomGoals = ({ handleApptChange, handlePresentationChange, handleDoorKnockChange, handleHourChange, handleGoalsCancel }) => {
+const CustomGoals = ({ handleApptChange, handlePresentationChange, handleDoorKnockChange, handleHourChange, handleGoalsShow }) => {
     const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = (values, { resetForm }) => {
@@ -11,14 +11,15 @@ const CustomGoals = ({ handleApptChange, handlePresentationChange, handleDoorKno
         handlePresentationChange(values.presentations);
         handleDoorKnockChange(values.doorKnocks);
         handleHourChange(values.hours);
-        handleGoalsCancel();
+        setSubmitted(true);
+        handleGoalsShow();
         console.log('form values:', values);
         console.log('in JSON format:', JSON.stringify(values));
-        resetForm();
-        setSubmitted(true);
         setTimeout(() => {
+            console.log('Submitted Value: ', submitted);
             setSubmitted(false);
         }, 10000); // show for 10 seconds
+        resetForm();
     };
 
     const getOptions = (numOptions) => {
@@ -127,7 +128,7 @@ const CustomGoals = ({ handleApptChange, handlePresentationChange, handleDoorKno
                                 <Button type="submit" color="primary" style={{ marginRight: '10px' }}>
                                     Submit
                                 </Button>
-                                <Button type='button' color='danger' onClick={handleGoalsCancel} style={{ marginRight: '10px', marginLeft: '10px' }}>
+                                <Button type='button' color='danger' onClick={handleGoalsShow} style={{ marginRight: '10px', marginLeft: '10px' }}>
                                     Cancel
                                 </Button>
                                 <Button type="reset" color="secondary" style={{ marginLeft: '10px' }}>

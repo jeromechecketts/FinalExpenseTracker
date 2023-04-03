@@ -6,15 +6,20 @@ import { useState } from 'react';
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const DailyStatForm = ({ handleStatsCancel }) => {
+const DailyStatForm = ({ handleStatsShow, handleApptProgress, handlePresentationProgress, handleDoorKnockProgress, handleHourProgress }) => {
     const [date, setDate] = useState(new Date());
 
     const handleSubmit = (values, { resetForm }) => {
+        handleApptProgress(values.appointments);
+        console.log('appointments: ', values.appointments);
+        handlePresentationProgress(values.presentations);
+        handleDoorKnockProgress(values.doorKnocks);
+        handleHourProgress(values.hours);
         console.log('form values:', values);
         console.log('in JSON format:', JSON.stringify(values));
-        handleStatsCancel();
+        handleStatsShow();
         resetForm();
-    }
+    };
 
     const handleDateChange = (date) => {
         setDate(date);
@@ -22,7 +27,7 @@ const DailyStatForm = ({ handleStatsCancel }) => {
 
     const getOptions = (numOptions) => {
         return [...Array(numOptions)].map((_, i) => (
-          <option key={i} value={i + 1}>{i + 1}</option>
+          <option key={i} value={i}>{i}</option>
         ));
       };
 
@@ -40,7 +45,7 @@ const DailyStatForm = ({ handleStatsCancel }) => {
                 onSubmit={handleSubmit}
                 // validate={validateContactForm}
             >
-                <Form onSubmit={handleSubmit}>
+                <Form>
                     <FormGroup row>
                         <Label htmlFor="date" md='2'>
                             Date
@@ -140,7 +145,7 @@ const DailyStatForm = ({ handleStatsCancel }) => {
                             <Button type="submit" color="primary" style={{ marginRight: '10px' }}>
                                 Submit
                             </Button>
-                            <Button type="button" color="danger" onClick={handleStatsCancel} style={{ marginLeft: '10px' }}>
+                            <Button type="button" color="danger" onClick={handleStatsShow} style={{ marginLeft: '10px' }}>
                                 Cancel
                             </Button>
                         </Col>
