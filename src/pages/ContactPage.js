@@ -19,7 +19,7 @@ const ContactPage = () => {
                     <a
                         role='button'
                         className='btn btn-link'
-                        href='tel:+12065551234'
+                        href='tel:+18559330835'
                     >
                         <i className="fa fa-phone" /> 1-855-933-0835
                     </a>
@@ -27,7 +27,7 @@ const ContactPage = () => {
                     <a
                         role='button'
                         className='btn btn-link'
-                        href='mailto:fakeemail@fakeemail.co'
+                        href='mailto:Agency@cardinal.com'
                     >
                         <i className='fa fa-envelope-o' /> Agency@cardinal.com
                     </a>

@@ -29,6 +29,9 @@ const Footer = () => {
                             <li>
                                 <Link to='/stats'>Stats</Link>
                             </li>
+                            <li>
+                                <Link to='/eapps'>Quoter / E-Apps</Link>
+                            </li>
                         </ul>
                     </Col>
                     <Col xs='6' sm='2' className="text-center">
