@@ -3,7 +3,7 @@ import HomeDisplay from "../display/HomeDisplay";
 
 const HomePage = () => {
     return (
-        <Container className="mt-5">
+        <Container className="mx-0 px-0">
             <HomeDisplay />
         </Container>
     );

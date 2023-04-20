@@ -21,5 +21,10 @@ code {
 }
 
 .site-footer a {
+  color: black;
+}
+
+.site-footer a:hover {
   color: white;
 }
+

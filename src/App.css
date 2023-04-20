@@ -43,3 +43,11 @@
   height: auto; /* preserve aspect ratio */
   object-fit: cover; /* scale image to cover entire container */
 }
+
+.home-image {
+  display: block;
+  width: 100vw; /* set a fixed width for all images */
+  height: auto; /* preserve aspect ratio */
+  object-fit: cover; /*scale image to cover entire container*/
+  margin: 0;
+}
