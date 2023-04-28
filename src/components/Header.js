@@ -44,29 +44,39 @@ const Header = () => {
 				>
 					<NavItem>
 						<NavLink
-							className='nav-link'
+							className='nav-link header-link'
 							to='/'
+							// style={{ color: 'black' }}
 						>
-							<i className='fa fa-home fa-lg' style={iconStyle} /> Home
+							<i
+								className='fa fa-home fa-lg'
+								style={iconStyle}
+							/>{' '}
+							Home
 						</NavLink>
 					</NavItem>
 					<NavItem>
 						<NavLink
-							className='nav-link'
+							className='nav-link header-link'
 							to='/companies'
+							style={{ color: 'black' }}
 						>
-							<i class="fa fa-light fa-briefcase fa-lg" style={iconStyle} />{' '}
+							<i
+								class='fa fa-light fa-briefcase fa-lg'
+								style={iconStyle}
+							/>{' '}
 							Companies
 						</NavLink>
 					</NavItem>
 					<NavItem>
 						<NavLink
-							className='nav-link'
+							className='nav-link header-link'
 							to='/contact'
+							style={{ color: 'black' }}
 						>
-							<i 
-								className='fa fa-sharp fa-solid fa-address-card fa-lg' 
-								style={iconStyle} 
+							<i
+								className='fa fa-sharp fa-solid fa-address-card fa-lg'
+								style={iconStyle}
 							/>{' '}
 							Contact Us
 						</NavLink>

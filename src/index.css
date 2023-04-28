@@ -16,6 +16,18 @@ code {
   background-image: linear-gradient(rgb(58, 57, 57), LightGray);
 }
 
+.nav-link:hover{
+  color: orange !important;
+}
+
+.header-link {
+  color: black !important;
+}
+
+.header-link:active {
+  color: orange !important;
+}
+
 .site-footer {
   background-image: linear-gradient(LightGray, rgb(58, 57, 57));
 }
